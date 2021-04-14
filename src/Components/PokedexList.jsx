@@ -36,11 +36,11 @@ function PokedexList() {
             Next
           </button>
         )}
-        <div className="pokedex-block">
-          {pokemons.map((pokemon) => (
+        {pokemons.map((pokemon) => (
+          <div className="pokedex-block">
             <PokedexDetails key={pokemon.name} pokemonId={pokemon.name} />
+          </div>
           ))}
-        </div>
       </>
     );
   }
