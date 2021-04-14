@@ -40,7 +40,7 @@ function PokedexList() {
           <div className="pokedex-block">
             <PokedexDetails key={pokemon.name} pokemonId={pokemon.name} />
           </div>
-          ))}
+        ))}
       </>
     );
   }
