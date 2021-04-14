@@ -1,0 +1,36 @@
+.sidebar-icon {
+  margin-top: 14px;
+  text-align: center;
+  height: 40px;
+  width: 40px;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background: #042331;
+  transition: all 0.5s ease;
+  font-size: 22px;
+  color: black;
+  line-height: 70px;
+  text-align: center;
+  background: #fc6852;
+  user-select: none;
+}
+.sidebar ul li a {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: white;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  transition: 0.4s;
+}
+.sidebar ul li:hover a {
+  padding-left: 50px;
+}
