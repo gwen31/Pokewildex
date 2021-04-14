@@ -8,3 +8,16 @@
   text-decoration: none;
 }
 
+.navbar {
+  position: fixed;
+}
+
+.main {
+  margin: auto;
+  float: right;
+  align-self: flex-end;
+  justify-content: flex-end;
+}
+
+.app {
+}

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import PokedexDetails from './PokedexDetails';
 
-const apiDefault = 'https://pokeapi.co/api/v2/pokemon';
+const apiDefault = 'https://pokeapi.co/api/v2/pokemon/';
 function PokedexList() {
   const [pokemons, setPokemons] = useState([]);
   const [currPage, setCurrPage] = useState(apiDefault);
