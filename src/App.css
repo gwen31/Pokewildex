@@ -21,3 +21,8 @@
 
 .app {
 }
+.pokedex-block{
+  border : solid 1px black;
+  margin : 25px;
+  border-radius : 25px;
+}
