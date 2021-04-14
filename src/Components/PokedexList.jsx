@@ -26,11 +26,6 @@ function PokedexList() {
   if (pokemons) {
     return (
       <>
-        <ul>
-          {pokemons.map((pokemon) => (
-            <PokedexDetails key={pokemon.name} pokemonId={pokemon.name} />
-          ))}
-        </ul>
         {prevPage && (
           <button type="submit" onClick={() => setCurrPage(prevPage)}>
             Previous
@@ -41,6 +36,11 @@ function PokedexList() {
             Next
           </button>
         )}
+        <div className="pokedex-block">
+          {pokemons.map((pokemon) => (
+            <PokedexDetails key={pokemon.name} pokemonId={pokemon.name} />
+          ))}
+        </div>
       </>
     );
   }
