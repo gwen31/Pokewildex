@@ -13,16 +13,14 @@
 }
 
 .main {
+  width: 500px;
   margin: auto;
-  float: right;
-  align-self: flex-end;
-  justify-content: flex-end;
 }
 
 .app {
 }
-.pokedex-block{
-  border : solid 1px black;
-  margin : 25px;
-  border-radius : 25px;
+.pokedex-block {
+  border: solid 1px black;
+  margin: 25px;
+  border-radius: 25px;
 }
