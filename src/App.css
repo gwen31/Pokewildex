@@ -12,11 +12,10 @@
   position: fixed;
 }
 
-.main {
-  width: 500px;
-  margin: auto;
+@media (min-width:700px) {
+  .main {
+    margin-left: 250px;
+  }
 }
 
-.app {
-}
-
+.app {}
