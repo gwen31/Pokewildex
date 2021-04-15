@@ -8,12 +8,14 @@ import imgRandom from './images/icons/random.png';
 import imgVersus from './images/icons/versus.png';
 import imgCap from './images/icons/cap.png';
 import imgBalance from './images/icons/balance.png';
+import SearchBar from '../Components/SearchBar';
 
 function Navbar() {
   return (
     <div>
       <div className="sidebar">
         <header>PokeWilDex</header>
+        <SearchBar />
         <ul>
           <li>
             <a href="toto">
