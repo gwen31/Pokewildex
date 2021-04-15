@@ -9,12 +9,13 @@ import imgVersus from './images/icons/versus.png';
 import imgCap from './images/icons/cap.png';
 import imgBalance from './images/icons/balance.png';
 import SearchBar from '../Components/SearchBar';
+import imgLogo from './images/logo.png';
 
 function Navbar() {
   return (
     <div>
       <div className="sidebar">
-        <header>PokeWilDex</header>
+        <img className="logo" src={imgLogo} alt="" />
         <SearchBar />
         <ul>
           <li>
