@@ -2,6 +2,15 @@
   display: flex;
   flex-wrap: wrap;
 }
+.pokedex-button{
+  width: 110px;
+  font-size: 2em;
+  background: linear-gradient(#ffA385,#fc6852);
+  border-radius: 15px;
+  border: 0px;
+  margin: 20px;
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+}
 .pokedex-card-center {
   position: absolute;
   top: 50%;
@@ -54,6 +63,7 @@
   text-transform: uppercase;
   font-weight: bold;
   font-size: 20px;
+  
 }
 .id {
   font-size: 18px;
@@ -69,9 +79,7 @@
   left: 150px;
   height: 100%;
 }
-.pokemon-police {
-  font-family: Pokemon;
-}
+
 .pokedex-card-textblock {
   padding-top: 5px;
 }
