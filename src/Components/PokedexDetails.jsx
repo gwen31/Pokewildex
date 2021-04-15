@@ -41,16 +41,22 @@ function PokedexDetails({ pokemonId }) {
                 alt={pokemonInfos.id}
               />
               <div className="pokedex-card-description pokedex-card-right">
-                {pokemonInfos.name}
-                Id {pokemonInfos.id}
-                type:
-                {pokemonTypes.map((e) => (
-                  <li>{e.type.name}</li>
-                ))}
-                Abilities :
-                {pokemonAbilities.map((e) => (
-                  <li>{e.ability.name}</li>
-                ))}
+                <p className="name">{pokemonInfos.name}</p>
+                <p className="pokedex-card-description">
+                  Id : {pokemonInfos.id}
+                </p>
+                <ul className="pokedex-card-description">
+                  type:
+                  {pokemonTypes.map((e) => (
+                    <li>{e.type.name}</li>
+                  ))}
+                </ul>
+                <ul className="pokedex-card-description">
+                  Abilities :
+                  {pokemonAbilities.map((e) => (
+                    <li>{e.ability.name}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
