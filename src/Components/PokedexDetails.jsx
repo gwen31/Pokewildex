@@ -31,40 +31,40 @@ function PokedexDetails({ pokemonId }) {
   }, []);
   if (pokemonInfos) {
     return (
-      <div className="pokedex-card">
-        <div className="pokedex-card-additional">
-          <div className="more-infos">
-            <img
-              className="pokedex-card-image"
-              src={pokemonSprites.front_default}
-              alt={pokemonInfos.id}
-            />
-            <div className="pokedex-card-description pokedex-card-right">
-              <div className="pokedex-card-textblock name">
-                {pokemonInfos.name}
-              </div>
-              <div className="pokedex-card-textblock id">
-                <strong>Id</strong> {pokemonInfos.id}
-              </div>
-              <div className="pokedex-card-textblock types">
-                <strong>type:</strong>
-                {pokemonTypes.map((e) => (
-                  <li>{e.type.name}</li>
-                ))}
-              </div>
-              <div className="pokedex-card-textblock abilities">
-                <strong>Abilities :</strong>
-                {pokemonAbilities.map((e) => (
-                  <li>{e.ability.name}</li>
-                ))}
+      <>
+        <div className="pokedex-card">
+          <div className="pokedex-card-additional">
+            <div className="more-infos">
+              <img
+                className="pokedex-card-image"
+                src={pokemonSprites.front_default}
+                alt={pokemonInfos.id}
+              />
+              <div className="pokedex-card-description pokedex-card-right">
+                <p className="name">{pokemonInfos.name}</p>
+                <p className="pokedex-card-description">
+                  Id : {pokemonInfos.id}
+                </p>
+                <ul className="pokedex-card-description">
+                  type:
+                  {pokemonTypes.map((e) => (
+                    <li>{e.type.name}</li>
+                  ))}
+                </ul>
+                <ul className="pokedex-card-description">
+                  Abilities :
+                  {pokemonAbilities.map((e) => (
+                    <li>{e.ability.name}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
+          <div className="pokedex-card-center name">
+            <h2 className="pokemon-police">{pokemonInfos.name}</h2>
+          </div>
         </div>
-        <div className="pokedex-card-center name">
-          <h2 className="pokemon-police">{pokemonInfos.name}</h2>
-        </div>
-      </div>
+      </>
     );
   }
 }
