@@ -42,7 +42,7 @@ function PokedexDetails({ pokemonId }) {
               <div className="pokedex-card-textblock name">
                 {pokemonInfos.name}
               </div>
-              <div className="pokedex-card-textblock Id">
+              <div className="pokedex-card-textblock id">
                 <strong>Id</strong> {pokemonInfos.id}
               </div>
               <div className="pokedex-card-textblock types">
