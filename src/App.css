@@ -12,7 +12,31 @@
   position: fixed;
 }
 
-@media (min-width:700px) {
+.app {
+  background-color: #e5e5f7;
+  background: radial-gradient(
+      circle,
+      transparent 20%,
+      #e5e5f7 20%,
+      #e5e5f7 80%,
+      transparent 80%,
+      transparent
+    ),
+    radial-gradient(
+        circle,
+        transparent 20%,
+        #e5e5f7 20%,
+        #e5e5f7 80%,
+        transparent 80%,
+        transparent
+      )
+      80px 80px,
+    linear-gradient(#ababab 6.4px, transparent 6.4px) 0 -3.2px,
+    linear-gradient(90deg, #ababab 6.4px, #e5e5f7 6.4px) -3.2px 0;
+  background-size: 160px 160px, 160px 160px, 80px 80px, 80px 80px;
+}
+
+@media (min-width: 700px) {
   .main {
     margin-left: 250px;
   }
@@ -21,4 +45,4 @@
   font-family: Pokemon;
   letter-spacing: 0.2em;
 }
-.app {}
+

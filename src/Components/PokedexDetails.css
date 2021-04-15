@@ -1,6 +1,7 @@
 .pokedex-cards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .pokedex-button{
   width: 110px;
