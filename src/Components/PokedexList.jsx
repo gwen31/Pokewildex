@@ -37,7 +37,7 @@ function PokedexList() {
           </button>
         )}
         {pokemons.map((pokemon) => (
-          <div className="pokedex-block">
+          <div>
             <PokedexDetails key={pokemon.name} pokemonId={pokemon.name} />
           </div>
         ))}
