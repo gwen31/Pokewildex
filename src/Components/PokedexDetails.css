@@ -1,6 +1,7 @@
 .pokedex-cards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .pokedex-card-center {
   position: absolute;
