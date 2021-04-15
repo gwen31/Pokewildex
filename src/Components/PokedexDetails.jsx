@@ -30,36 +30,39 @@ function PokedexDetails({ pokemonId }) {
   }, []);
   if (pokemonInfos) {
     return (
-      <div>
-        <img src={pokemonSprites.front_default} alt={pokemonInfos.id} />
-        <table>
-          <tr>
-            <td>id</td>
-            <td>{pokemonInfos.id}</td>
-          </tr>
-          <tr>
-            <td>name</td>
-            <td>{pokemonInfos.name}</td>
-          </tr>
-          <tr>
-            <tr>type</tr>
-            <td>
-              <ul>
+      <div className="pokedex-card">
+        <div className="pokedex-card-additional">
+          <div className="more-infos">
+            <img
+              className="pokedex-card-image"
+              src={pokemonSprites.front_default}
+              alt={pokemonInfos.id}
+            />
+            <div className="pokedex-card-description pokedex-card-right">
+              <div className="pokedex-card-textblock name">
+                {pokemonInfos.name}
+              </div>
+              <div className="pokedex-card-textblock id">
+                <strong>Id</strong> {pokemonInfos.id}
+              </div>
+              <div className="pokedex-card-textblock types">
+                <strong>type:</strong>
                 {pokemonTypes.map((e) => (
                   <li>{e.type.name}</li>
                 ))}
-              </ul>
-            </td>
-            <tr>Abilities</tr>
-            <td>
-              <ul>
+              </div>
+              <div className="pokedex-card-textblock abilities">
+                <strong>Abilities :</strong>
                 {pokemonAbilities.map((e) => (
                   <li>{e.ability.name}</li>
                 ))}
-              </ul>
-            </td>
-          </tr>
-        </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="pokedex-card-center name">
+          <h2 className="pokemon-police">{pokemonInfos.name}</h2>
+        </div>
       </div>
     );
   }
