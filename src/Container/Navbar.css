@@ -1,4 +1,4 @@
-div{
+div {
   height: 100%;
 }
 .sidebar-icon {
@@ -34,4 +34,7 @@ div{
 }
 .sidebar ul li:hover a {
   padding-left: 50px;
+}
+.disable {
+  display: none;
 }

@@ -33,7 +33,7 @@ function Navbar() {
               Comparator
             </a>
           </li>
-          <li>
+          <li className="disable">
             <a href="toto">
               <img className="sidebar-icon" src={imgVersus} alt="" />
               Combat
