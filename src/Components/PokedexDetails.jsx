@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import './PokedexDetails.css';
 
 function PokedexDetails({ pokemonId }) {
   const apiDefault = 'https://pokeapi.co/api/v2/pokemon/';
