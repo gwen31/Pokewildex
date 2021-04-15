@@ -36,11 +36,11 @@ function PokedexList() {
             Next
           </button>
         )}
-        {pokemons.map((pokemon) => (
-          <div>
+        <div className="pokedex-cards">
+          {pokemons.map((pokemon) => (
             <PokedexDetails key={pokemon.name} pokemonId={pokemon.name} />
-          </div>
-        ))}
+          ))}
+        </div>
       </>
     );
   }
