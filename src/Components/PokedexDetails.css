@@ -3,15 +3,32 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.pokedex-button{
+
+.pokedex-button {
+  display: inline-block;
+  margin: 20px;
   width: 110px;
   font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: rgb(140, 75, 75);
   background: linear-gradient(#ffA385,#fc6852);
+  border: none;
   border-radius: 15px;
-  border: 0px;
-  margin: 20px;
-  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 9px #999;
 }
+.pokedex-button:hover {
+  background-color: #ffA385
+}
+.pokedex-button:active {
+  background-color: #fc6852;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .pokedex-card-center {
   position: absolute;
   top: 50%;
