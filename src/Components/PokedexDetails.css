@@ -1,73 +1,77 @@
+.pokedex-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
 .pokedex-card-center {
-    position: absolute;
-    top: 50%;
-    left: 70%;
-    -webkit-transform: translate(-50%, -50%);
-  }
-  /*PROPRIETY CARD*/
-  .pokedex-card {
-    width: 450px;
-    height: 250px;
-    background-color: #fff;
-    background: linear-gradient(#f8f8f8, #fff);
-    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
-    border-radius: 15px;
-    position: relative;
-    margin: 1.5rem;
-  }
-  /*IMAGE*/
-  .pokedex-card-image {
-    height: 150px;
-    position: static;
-    margin: 5px;
-    padding-top: 15px;
-    float: left;
-  }
-  /*PAGE DE COULEUR*/
-  .pokedex-card-additional {
-    position: absolute;
-    width: 170px;
-    height: 100%;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
-    background: linear-gradient(#fd3, #fa2);
-    transition: width 0.4s;
-    overflow: hidden;
-    z-index: 2;
-  }
-  /*HOVER*/
-  .pokedex-card:hover .pokedex-card-additional {
-    width: 100%;
-    border-radius: 10px 15px 15px 10px;
-  }
-  /*PARTY DESCRIPTION*/
-  .pokedex-card-description {
-    padding: 10px;
-    text-align: justify;
-    width: 220px;
-  }
-  .name {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 20px;
-  }
-  .id {
-    font-size: 18px;
-  }
-  .pokedex-card-right {
-    position: static;
-    margin-left: 250px;
-  }
-  .pokedex-card .additional .more-info {
-    width: 300px;
-    float: right;
-    position: fixed;
-    left: 150px;
-    height: 100%;
-  }
-  .pokemon-police {
-    font-family: Pokemon;
-  }
-  .pokedex-card-textblock {
-    padding-top: 5px;
-  }
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  -webkit-transform: translate(-50%, -50%);
+}
+/*PROPRIETY CARD*/
+.pokedex-card {
+  width: 450px;
+  height: 250px;
+  background-color: #fff;
+  background: linear-gradient(#f8f8f8, #fff);
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  position: relative;
+  margin: 1.5rem;
+}
+/*IMAGE*/
+.pokedex-card-image {
+  height: 150px;
+  position: static;
+  margin: 5px;
+  padding-top: 15px;
+  float: left;
+}
+/*PAGE DE COULEUR*/
+.pokedex-card-additional {
+  position: absolute;
+  width: 170px;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(#fd3, #fa2);
+  transition: width 0.4s;
+  overflow: hidden;
+  z-index: 2;
+}
+/*HOVER*/
+.pokedex-card:hover .pokedex-card-additional {
+  width: 100%;
+  border-radius: 10px 15px 15px 10px;
+}
+/*PARTY DESCRIPTION*/
+.pokedex-card-description {
+  padding: 10px;
+  text-align: justify;
+  width: 220px;
+}
+.name {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+}
+.id {
+  font-size: 18px;
+}
+.pokedex-card-right {
+  position: static;
+  margin-left: 250px;
+}
+.pokedex-card .additional .more-info {
+  width: 300px;
+  float: right;
+  position: fixed;
+  left: 150px;
+  height: 100%;
+}
+.pokemon-police {
+  font-family: Pokemon;
+}
+.pokedex-card-textblock {
+  padding-top: 5px;
+}
