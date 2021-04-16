@@ -6,7 +6,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .load-pokeball {
-    width: 50px;
+    width: 150px;
     animation: spin infinite 1s linear;
   }
 }
