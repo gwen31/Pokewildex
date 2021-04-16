@@ -27,13 +27,21 @@ function PokedexList() {
     return (
       <>
         {prevPage && (
-          <button type="submit" onClick={() => setCurrPage(prevPage)}>
-            Previous
+          <button
+            className="pokedex-button"
+            type="submit"
+            onClick={() => setCurrPage(prevPage)}
+          >
+            ←
           </button>
         )}
         {nextPage && (
-          <button type="submit" onClick={() => setCurrPage(nextPage)}>
-            Next
+          <button
+            className="pokedex-button"
+            type="submit"
+            onClick={() => setCurrPage(nextPage)}
+          >
+            →
           </button>
         )}
         <div className="pokedex-cards">
