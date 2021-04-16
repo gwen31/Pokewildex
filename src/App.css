@@ -7,11 +7,6 @@
   list-style: none;
   text-decoration: none;
 }
-
-.navbar {
-  position: fixed;
-}
-
 .app {
   background-color: #e5e5f7;
   background: radial-gradient(

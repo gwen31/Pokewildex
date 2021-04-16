@@ -1,59 +1,52 @@
-import Comparator from '../Components/Comparator';
-import Randomteam from '../Components/RandomTeam';
-import TypesList from '../Components/TypesList';
-import StaffList from '../Components/StaffList';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 import imgPokedex from './images/icons/pokedex.png';
 import imgRandom from './images/icons/random.png';
 import imgVersus from './images/icons/versus.png';
 import imgCap from './images/icons/cap.png';
 import imgBalance from './images/icons/balance.png';
-import SearchBar from '../Components/SearchBar';
 import imgLogo from './images/logo.png';
+import SearchBar from '../Components/SearchBar';
 
 function Navbar() {
   return (
-    <div>
+    <div className="navbar">
       <div className="sidebar">
         <img className="logo" src={imgLogo} alt="" />
         <SearchBar />
         <ul>
           <li>
-            <a href="toto">
+            <Link to="/PokedexList">
               <img className="sidebar-icon" src={imgPokedex} alt="" />
               Pokedex
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="toto">
+            <Link to="/RandomTeam">
               <img className="sidebar-icon" src={imgRandom} alt="" />
               Team Generator
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="toto">
+            <Link to="/Comparator">
               <img className="sidebar-icon" src={imgBalance} alt="" />
               Comparator
-            </a>
+            </Link>
           </li>
           <li className="disable">
-            <a href="toto">
+            <Link to="/">
               <img className="sidebar-icon" src={imgVersus} alt="" />
               Combat
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="toto">
+            <Link to="/StaffList">
               <img className="sidebar-icon" src={imgCap} alt="" />
               Staff
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
-      <Comparator />
-      <Randomteam />
-      <TypesList />
-      <StaffList />
     </div>
   );
 }
