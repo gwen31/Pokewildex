@@ -13,6 +13,9 @@ function App() {
         <Navbar />
         <div className="main">
           <Switch>
+            <Route exact path="/">
+              <PokedexList />
+            </Route>
             <Route path="/PokedexList">
               <PokedexList />
             </Route>
