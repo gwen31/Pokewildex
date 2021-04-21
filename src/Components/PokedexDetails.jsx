@@ -16,7 +16,7 @@ function PokedexDetails({ pokemonId }) {
               <img
                 className="pokedex-card-image"
                 src={sprites.front_default}
-                alt={id}
+                alt={name}
               />
             ) : (
               <LoadingElement />

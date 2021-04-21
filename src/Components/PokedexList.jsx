@@ -12,16 +12,12 @@ function PokedexList() {
     axios
       .get(currPage)
       .then((res) => res.data)
-      .then((res) => res.results)
+      .then((res) => {
+        setNextPage(res.next);
+        setPrevPage(res.previous);
+        return res.results;
+      })
       .then(setPokemons);
-    axios
-      .get(currPage)
-      .then((res) => res.data)
-      .then((res) => setNextPage(res.next));
-    axios
-      .get(currPage)
-      .then((res) => res.data)
-      .then((res) => setPrevPage(res.previous));
   }, [currPage]);
   if (pokemons) {
     return (
