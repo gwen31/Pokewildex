@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function PokemonFetchApi(pokemonId) {
+function PokemonFetchApi(id) {
   const pokemonApiDefault = 'https://pokeapi.co/api/v2/pokemon/';
-  const [pokemonInfos, setPokemonInfos] = useState({});
+  const [pokemon, setPokemon] = useState({});
   useEffect(() => {
     axios
-      .get(pokemonApiDefault + pokemonId)
+      .get(pokemonApiDefault + id)
       .then((res) => res.data)
-      .then(setPokemonInfos);
+      .then(setPokemon);
   }, []);
-  return pokemonInfos;
+  return pokemon;
 }
 export default PokemonFetchApi;
