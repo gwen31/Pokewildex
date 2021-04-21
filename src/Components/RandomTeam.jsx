@@ -1,8 +1,5 @@
 import PokedexDetails from './PokedexDetails';
-
-const min = 1;
-const max = 898;
-const getRandomPokemonId = () => Math.floor(Math.random() * max) + min;
+import getRandomPokemonId from '../utils/pokemons';
 
 function RandomTeam() {
   return (
