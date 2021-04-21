@@ -1,4 +1,4 @@
-import { maxPokemonId, minPokemonId } from '../constants/PokemonRange';
+import { maxPokemonId, minPokemonId } from '../constants/pokemonRange';
 
 const getRandomPokemonId = () => Math.floor(Math.random() * maxPokemonId) + minPokemonId;
 
