@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function FetchApi(pokemonId) {
+function PokemonFetchApi(pokemonId) {
   const apiDefault = 'https://pokeapi.co/api/v2/pokemon/';
   const [pokemonInfos, setPokemonInfos] = useState({});
   useEffect(() => {
@@ -12,4 +12,4 @@ function FetchApi(pokemonId) {
   }, []);
   return pokemonInfos;
 }
-export default FetchApi;
+export default PokemonFetchApi;
