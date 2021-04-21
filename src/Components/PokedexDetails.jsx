@@ -1,18 +1,9 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
 import LoadingElement from './LoadingElement';
 import './PokedexDetails.css';
+import FetchApi from '../utils/FetchApi';
 
 function PokedexDetails({ pokemonId }) {
-  const apiDefault = 'https://pokeapi.co/api/v2/pokemon/';
-  const [pokemonInfos, setPokemonInfos] = useState({});
-  useEffect(() => {
-    axios
-      .get(apiDefault + pokemonId)
-      .then((res) => res.data)
-      .then(setPokemonInfos);
-  }, []);
-
+  const pokemonInfos = FetchApi(pokemonId);
   const {
     id, name, sprites, types, abilities,
   } = pokemonInfos;
