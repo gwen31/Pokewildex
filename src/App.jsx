@@ -5,10 +5,12 @@ import Comparator from './Components/Comparator';
 import RandomTeam from './Components/RandomTeam';
 import StaffList from './Components/StaffList';
 import './App.css';
+import Header from './Container/Header';
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <Router>
         <Navbar />
         <div className="main">
