@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import PokedexDetails from './PokedexDetails';
 import API_POKEMON_DEFAULT from '../constants/api';
+import LoadingScreen from './LoadingScreen';
 
 function PokedexList() {
   const [pokemons, setPokemons] = useState([]);
@@ -19,6 +20,7 @@ function PokedexList() {
       })
       .then(setPokemons);
   }, [currPage]);
+
   if (pokemons) {
     return (
       <>
@@ -48,5 +50,6 @@ function PokedexList() {
       </>
     );
   }
+  return <LoadingScreen />;
 }
 export default PokedexList;
