@@ -136,7 +136,7 @@
   .pokedex-card-center {
     position: absolute;
     top: 110%;
-    left: 30%;
+    left: 8em;
     -webkit-transform: translate(-50%, -50%);
   }
   /*PROPRIETY CARD*/
@@ -162,7 +162,7 @@
   .pokedex-card-description {
     padding: 10px;
     text-align: center;
-    width: 220px;
+    
   }
   .name {
     text-transform: uppercase;
