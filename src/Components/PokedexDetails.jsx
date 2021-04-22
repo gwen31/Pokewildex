@@ -1,6 +1,6 @@
 import LoadingElement from './LoadingElement';
 import './PokedexDetails.css';
-import PokemonFetchApi from '../utils/PokemonFetchApi';
+import PokemonFetchApi from './PokemonFetchApi';
 
 function PokedexDetails({ pokemonId }) {
   const pokemonInfos = PokemonFetchApi(pokemonId);
