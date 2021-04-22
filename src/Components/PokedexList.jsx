@@ -6,7 +6,7 @@ import LoadingScreen from './LoadingScreen';
 
 function PokedexList() {
   const [pokemons, setPokemons] = useState([]);
-  const [currPage, setCurrPage] = useState(API_POKEMON_DEFAULT);
+  const [currPage, setCurrPage] = useState([API_POKEMON_DEFAULT]);
   const [nextPage, setNextPage] = useState([]);
   const [prevPage, setPrevPage] = useState([]);
   const [searchedName, setSearchedName] = useState('');
@@ -17,9 +17,8 @@ function PokedexList() {
       .then((res) => {
         setNextPage(res.next);
         setPrevPage(res.previous);
-        return res.results;
-      })
-      .then(setPokemons);
+        setPokemons(res.results);
+      });
   }, [currPage]);
 
   const handleSearch = (pkmnName) => {
