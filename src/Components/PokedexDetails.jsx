@@ -18,6 +18,7 @@ function PokedexDetails({ pokemonId }) {
                 src={sprites.front_default}
                 alt={name}
               />
+
             ) : (
               <LoadingElement />
             )}
@@ -44,6 +45,7 @@ function PokedexDetails({ pokemonId }) {
               ) : (
                 <LoadingElement />
               )}
+
             </div>
           </div>
         </div>
