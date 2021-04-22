@@ -9,6 +9,7 @@ function PokedexList() {
   const [currPage, setCurrPage] = useState(API_POKEMON_DEFAULT);
   const [nextPage, setNextPage] = useState([]);
   const [prevPage, setPrevPage] = useState([]);
+  const [searchedName, setSearchedName] = useState('');
   useEffect(() => {
     axios
       .get(currPage)
@@ -21,7 +22,6 @@ function PokedexList() {
       .then(setPokemons);
   }, [currPage]);
 
-  const [searchedName, setSearchedName] = useState('');
   const handleSearch = (pkmnName) => {
     const nameToLower = pkmnName.toLowerCase();
     setSearchedName(nameToLower);
@@ -32,7 +32,7 @@ function PokedexList() {
       .then((result) => setPokemons([result.data]))
       .catch((err) => {
         if (err.response.data === 'Not Found') {
-          alert("Ce nom de pokémon n'existe pas");
+          alert("This pokemon doesn't exist ! ");
         }
       });
   };
