@@ -3,13 +3,13 @@ import './LoadingElement.css';
 
 function LoadingElement() {
   return (
-    <div className="loading-Element">
+    <div className="loading-element">
       <img
         className="load-pokeball-mini"
         src={imgPokeBallMini}
         alt="pokeball"
       />
-      <p>now Loading</p>
+      <p>Loading</p>
     </div>
   );
 }

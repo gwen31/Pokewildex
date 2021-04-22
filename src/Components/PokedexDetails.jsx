@@ -1,71 +1,58 @@
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+import LoadingElement from './LoadingElement';
 import './PokedexDetails.css';
+import PokemonFetchApi from './PokemonFetchApi';
 
 function PokedexDetails({ pokemonId }) {
-  const apiDefault = 'https://pokeapi.co/api/v2/pokemon/';
-  const [pokemonInfos, setPokemonInfos] = useState({});
-  const [pokemonSprites, setPokemonSprites] = useState({});
-  const [pokemonAbilities, setPokemonAbilities] = useState([]);
-  const [pokemonTypes, setPokemonTypes] = useState([]);
-  useEffect(() => {
-    axios
-      .get(apiDefault + pokemonId)
-      .then((res) => res.data)
-      .then(setPokemonInfos);
-    axios
-      .get(apiDefault + pokemonId)
-      .then((res) => res.data)
-      .then((res) => res.sprites)
-      .then(setPokemonSprites);
-    axios
-      .get(apiDefault + pokemonId)
-      .then((res) => res.data)
-      .then((res) => res.abilities)
-      .then(setPokemonAbilities);
-    axios
-      .get(apiDefault + pokemonId)
-      .then((res) => res.data)
-      .then((res) => res.types)
-      .then(setPokemonTypes);
-  }, []);
-  if (pokemonInfos) {
-    return (
-      <>
-        <div className="pokedex-card">
-          <div className="pokedex-card-additional">
-            <div className="more-infos">
+  const pokemonInfos = PokemonFetchApi(pokemonId);
+  const {
+    id, name, sprites, types, abilities,
+  } = pokemonInfos;
+  return (
+    <>
+      <div className="pokedex-card">
+        <div className="pokedex-card-additional">
+          <div className="more-infos">
+            {sprites ? (
               <img
                 className="pokedex-card-image"
-                src={pokemonSprites.front_default}
-                alt={pokemonInfos.id}
+                src={sprites.front_default}
+                alt={name}
               />
-              <div className="pokedex-card-description pokedex-card-right">
-                <p className="name">{pokemonInfos.name}</p>
-                <p className="pokedex-card-description">
-                  Id : {pokemonInfos.id}
-                </p>
+            ) : (
+              <LoadingElement />
+            )}
+            <div className="pokedex-card-description pokedex-card-right">
+              <p className="name">{name}</p>
+              <p className="pokedex-card-description">Id : {id}</p>
+              {types ? (
                 <ul className="pokedex-card-description">
                   type:
-                  {pokemonTypes.map((e) => (
+                  {types.map((e) => (
                     <li>{e.type.name}</li>
                   ))}
                 </ul>
+              ) : (
+                <LoadingElement />
+              )}
+              {abilities ? (
                 <ul className="pokedex-card-description">
                   Abilities :
-                  {pokemonAbilities.map((e) => (
+                  {abilities.map((e) => (
                     <li>{e.ability.name}</li>
                   ))}
                 </ul>
-              </div>
+              ) : (
+                <LoadingElement />
+              )}
             </div>
           </div>
-          <div className="pokedex-card-center name">
-            <h2 className="pokemon-police">{pokemonInfos.name}</h2>
-          </div>
         </div>
-      </>
-    );
-  }
+        <div className="pokedex-card-center name">
+          <h2 className="pokemon-police">{name}</h2>
+        </div>
+      </div>
+    </>
+  );
 }
+
 export default PokedexDetails;
