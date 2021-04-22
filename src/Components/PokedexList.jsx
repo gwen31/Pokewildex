@@ -36,6 +36,7 @@ function PokedexList() {
         }
       });
   };
+  const handlePage = (page) => setCurrPage(page);
 
   if (pokemons) {
     return (
@@ -45,7 +46,7 @@ function PokedexList() {
             <button
               className="pokedex-button"
               type="submit"
-              onClick={() => setCurrPage(prevPage)}
+              onClick={() => handlePage(prevPage)}
             >
               ←
             </button>
@@ -66,7 +67,7 @@ function PokedexList() {
             <button
               className="pokedex-button"
               type="submit"
-              onClick={() => setCurrPage(nextPage)}
+              onClick={() => handlePage(nextPage)}
             >
               →
             </button>
@@ -78,6 +79,26 @@ function PokedexList() {
             <PokedexDetails key={pokemon.name} pokemonId={pokemon.name} />
           ))}
         </div>
+        <section className="pokedex-explorer">
+          {prevPage && (
+            <button
+              className="pokedex-button"
+              type="submit"
+              onClick={() => handlePage(prevPage)}
+            >
+              ←
+            </button>
+          )}
+          {nextPage && (
+            <button
+              className="pokedex-button"
+              type="submit"
+              onClick={() => handlePage(nextPage)}
+            >
+              →
+            </button>
+          )}
+        </section>
       </>
     );
   }
