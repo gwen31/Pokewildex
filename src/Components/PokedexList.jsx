@@ -55,13 +55,15 @@ function PokedexList() {
           placeholder="searchbar"
           onChange={(e) => handleSearch(e.target.value)}
         />
-        <button
-          className="explorer"
-          type="submit"
-          onClick={() => handleSubmit()}
-        >
-          GO
-        </button>
+        {searchedName && (
+          <button
+            className="explorer"
+            type="submit"
+            onClick={() => handleSubmit()}
+          >
+            GO
+          </button>
+        )}
         {nextPage && (
           <button
             className="pokedex-button"
