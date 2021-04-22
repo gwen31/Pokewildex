@@ -34,7 +34,7 @@
     position: absolute;
     top: 85%;
     left: 70%;
-    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
   /*PROPRIETY CARD*/
   .pokedex-card {
@@ -101,6 +101,7 @@
   .pokedex-card-textblock {
     padding-top: 5px;
   }
+
 }
 @media screen and (max-width: 700px) {
   .pokedex-cards {
@@ -137,7 +138,7 @@
     position: absolute;
     top: 110%;
     left: 8em;
-    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
   /*PROPRIETY CARD*/
   .pokedex-card {
@@ -162,7 +163,6 @@
   .pokedex-card-description {
     padding: 10px;
     text-align: center;
-    
   }
   .name {
     text-transform: uppercase;
@@ -177,4 +177,17 @@
     margin-left: 1em;
     padding: 1.5em;
   }
+  body {
+    padding-left: 10%;
+  }
+}
+
+.pokedex-explorer {
+  text-align: center;
+  margin-left: 2em;
+  padding-top: 1em;
+}
+
+.explorer {
+  height: 2em;
 }
