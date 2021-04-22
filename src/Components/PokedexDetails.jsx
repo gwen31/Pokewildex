@@ -16,36 +16,35 @@ function PokedexDetails({ pokemonId }) {
               <img
                 className="pokedex-card-image"
                 src={sprites.front_default}
-                alt={name}
+                alt={id}
               />
-
             ) : (
               <LoadingElement />
             )}
             <div className="pokedex-card-description pokedex-card-right">
-              <p className="name">{name}</p>
-              <p className="pokedex-card-description">Id : {id}</p>
-              {types ? (
-                <ul className="pokedex-card-description">
-                  type:
-                  {types.map((e) => (
-                    <li>{e.type.name}</li>
-                  ))}
-                </ul>
-              ) : (
-                <LoadingElement />
-              )}
-              {abilities ? (
-                <ul className="pokedex-card-description">
-                  Abilities :
-                  {abilities.map((e) => (
-                    <li>{e.ability.name}</li>
-                  ))}
-                </ul>
-              ) : (
-                <LoadingElement />
-              )}
-
+              <section className="responsive-description">
+                <p className="pokedex-card-description">Id : {id}</p>
+                {types ? (
+                  <ul className="pokedex-card-description">
+                    type:
+                    {types.map((e) => (
+                      <li>{e.type.name}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <LoadingElement />
+                )}
+                {abilities ? (
+                  <ul className="pokedex-card-description">
+                    Abilities :
+                    {abilities.map((e) => (
+                      <li>{e.ability.name}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <LoadingElement />
+                )}
+              </section>
             </div>
           </div>
         </div>

@@ -5,7 +5,6 @@
     justify-content: space-evenly;
   }
 
-
   .pokedex-button {
     display: inline-block;
     margin: 20px;
@@ -35,7 +34,7 @@
     position: absolute;
     top: 85%;
     left: 70%;
-    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
   /*PROPRIETY CARD*/
   .pokedex-card {
@@ -139,7 +138,7 @@
     position: absolute;
     top: 110%;
     left: 8em;
-    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
   /*PROPRIETY CARD*/
   .pokedex-card {
