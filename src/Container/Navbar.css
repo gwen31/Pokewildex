@@ -48,10 +48,12 @@ div {
   .navbar {
     left: -195px;
   }
+
   .logo {
     display: none;
   }
   ul {
     padding-top: 45%;
   }
+
 }

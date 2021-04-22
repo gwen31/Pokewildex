@@ -5,6 +5,7 @@
     justify-content: space-evenly;
   }
 
+
   .pokedex-button {
     display: inline-block;
     margin: 20px;
@@ -101,6 +102,7 @@
   .pokedex-card-textblock {
     padding-top: 5px;
   }
+
 }
 @media screen and (max-width: 700px) {
   .pokedex-cards {
@@ -179,4 +181,14 @@
   body {
     padding-left: 10%;
   }
+}
+
+.pokedex-explorer {
+  text-align: center;
+  margin-left: 2em;
+  padding-top: 1em;
+}
+
+.explorer {
+  height: 2em;
 }
