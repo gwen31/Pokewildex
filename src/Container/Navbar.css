@@ -44,3 +44,14 @@ div {
 .disable {
   display: none;
 }
+@media (max-width: 700px) {
+  .navbar {
+    left: -195px;
+  }
+  .logo {
+    display: none;
+  }
+  ul {
+    padding-top: 50%;
+  }
+}
