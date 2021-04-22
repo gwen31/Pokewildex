@@ -21,27 +21,58 @@ function PokedexList() {
       .then(setPokemons);
   }, [currPage]);
 
+  const [searchedName, setSearchedName] = useState('');
+  const handleSearch = (pkmnName) => {
+    const nameToLower = pkmnName.toLowerCase();
+    setSearchedName(nameToLower);
+  };
+  const handleSubmit = () => {
+    axios
+      .get(`${API_POKEMON_DEFAULT}${searchedName}`)
+      .then((result) => setPokemons([result.data]))
+      .catch((err) => {
+        if (err.response.data === 'Not Found') {
+          alert("Ce nom de pokémon n'existe pas");
+        }
+      });
+  };
+
   if (pokemons) {
     return (
       <>
-        {prevPage && (
+        <section className="pokedex-explorer">
+          {prevPage && (
+            <button
+              className="pokedex-button"
+              type="submit"
+              onClick={() => setCurrPage(prevPage)}
+            >
+              ←
+            </button>
+          )}
+          <input
+            className="explorer"
+            placeholder="searchbar"
+            onChange={(e) => handleSearch(e.target.value)}
+          />
           <button
-            className="pokedex-button"
+            className="explorer"
             type="submit"
-            onClick={() => setCurrPage(prevPage)}
+            onClick={() => handleSubmit()}
           >
-            ←
+            GO
           </button>
-        )}
-        {nextPage && (
-          <button
-            className="pokedex-button"
-            type="submit"
-            onClick={() => setCurrPage(nextPage)}
-          >
-            →
-          </button>
-        )}
+          {nextPage && (
+            <button
+              className="pokedex-button"
+              type="submit"
+              onClick={() => setCurrPage(nextPage)}
+            >
+              →
+            </button>
+          )}
+        </section>
+
         <div className="pokedex-cards">
           {pokemons.map((pokemon) => (
             <PokedexDetails key={pokemon.name} pokemonId={pokemon.name} />
