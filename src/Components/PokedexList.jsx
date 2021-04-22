@@ -38,70 +38,70 @@ function PokedexList() {
   };
   const handlePage = (page) => setCurrPage(page);
 
-  if (pokemons) {
-    return (
-      <>
-        <section className="pokedex-explorer">
-          {prevPage && (
-            <button
-              className="pokedex-button"
-              type="submit"
-              onClick={() => handlePage(prevPage)}
-            >
-              ←
-            </button>
-          )}
-          <input
-            className="explorer"
-            placeholder="searchbar"
-            onChange={(e) => handleSearch(e.target.value)}
-          />
+  return (
+    <>
+      <section className="pokedex-explorer">
+        {prevPage && (
           <button
-            className="explorer"
+            className="pokedex-button"
             type="submit"
-            onClick={() => handleSubmit()}
+            onClick={() => handlePage(prevPage)}
           >
-            GO
+            ←
           </button>
-          {nextPage && (
-            <button
-              className="pokedex-button"
-              type="submit"
-              onClick={() => handlePage(nextPage)}
-            >
-              →
-            </button>
-          )}
-        </section>
-
+        )}
+        <input
+          className="explorer"
+          placeholder="searchbar"
+          onChange={(e) => handleSearch(e.target.value)}
+        />
+        <button
+          className="explorer"
+          type="submit"
+          onClick={() => handleSubmit()}
+        >
+          GO
+        </button>
+        {nextPage && (
+          <button
+            className="pokedex-button"
+            type="submit"
+            onClick={() => handlePage(nextPage)}
+          >
+            →
+          </button>
+        )}
+      </section>
+      {pokemons ? (
         <div className="pokedex-cards">
           {pokemons.map((pokemon) => (
             <PokedexDetails key={pokemon.name} pokemonId={pokemon.name} />
           ))}
         </div>
-        <section className="pokedex-explorer">
-          {prevPage && (
-            <button
-              className="pokedex-button"
-              type="submit"
-              onClick={() => handlePage(prevPage)}
-            >
-              ←
-            </button>
-          )}
-          {nextPage && (
-            <button
-              className="pokedex-button"
-              type="submit"
-              onClick={() => handlePage(nextPage)}
-            >
-              →
-            </button>
-          )}
-        </section>
-      </>
-    );
-  }
-  return <LoadingScreen />;
+      ) : (
+        <LoadingScreen />
+      )}
+      <section className="pokedex-explorer">
+        {prevPage && (
+          <button
+            className="pokedex-button"
+            type="submit"
+            onClick={() => handlePage(prevPage)}
+          >
+            ←
+          </button>
+        )}
+        {nextPage && (
+          <button
+            className="pokedex-button"
+            type="submit"
+            onClick={() => handlePage(nextPage)}
+          >
+            →
+          </button>
+        )}
+      </section>
+    </>
+  );
 }
 export default PokedexList;
