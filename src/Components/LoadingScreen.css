@@ -1,13 +1,13 @@
 .loading-screen {
-  padding:20px;
+
   text-align: center;
-  margin: 20px;
+
   position: absolute;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .load-pokeball {
-    width: 300px;
+    width: 100px;
     animation: spin infinite 1s linear;
   }
 }
