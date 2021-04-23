@@ -1,11 +1,12 @@
 import LoadingElement from './LoadingElement';
+import LoadingScreen from './LoadingScreen';
 import './PokedexDetails.css';
 import PokemonFetchApi from './PokemonFetchApi';
 
 function PokedexDetails({ pokemonId }) {
   const pokemonInfos = PokemonFetchApi(pokemonId);
   const {
-    id, name, sprites, types, abilities,
+    id, sprites, types, abilities, species,
   } = pokemonInfos;
   return (
     <>
@@ -49,7 +50,11 @@ function PokedexDetails({ pokemonId }) {
           </div>
         </div>
         <div className="pokedex-card-center name">
-          <h2 className="pokemon-police">{name}</h2>
+          {species ? (
+            <h2 className="pokemon-police">{species.name}</h2>
+          ) : (
+            <LoadingScreen />
+          )}
         </div>
       </div>
     </>
