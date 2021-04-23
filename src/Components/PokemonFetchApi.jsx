@@ -6,7 +6,7 @@ function PokemonFetchApi(id) {
   const [pokemon, setPokemon] = useState({});
   useEffect(() => {
     axios
-      .get(API_POKEMON_DEFAULT + id)
+      .get(`${API_POKEMON_DEFAULT}${id}`)
       .then((res) => res.data)
       .then(setPokemon);
   }, []);

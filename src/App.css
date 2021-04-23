@@ -7,41 +7,20 @@
   list-style: none;
   text-decoration: none;
 }
-.app {
-  background-color: #e5e5f7;
-  background: radial-gradient(
-      circle,
-      transparent 20%,
-      #e5e5f7 20%,
-      #e5e5f7 80%,
-      transparent 80%,
-      transparent
-    ),
-    radial-gradient(
-        circle,
-        transparent 20%,
-        #e5e5f7 20%,
-        #e5e5f7 80%,
-        transparent 80%,
-        transparent
-      )
-      80px 80px,
-    linear-gradient(#ababab 6.4px, transparent 6.4px) 0 -3.2px,
-    linear-gradient(90deg, #ababab 6.4px, #e5e5f7 6.4px) -3.2px 0;
-  background-size: 160px 160px, 160px 160px, 80px 80px, 80px 80px;
-}
 
 @media (min-width: 700px) {
   .main {
     margin-left: 250px;
   }
 }
+
 .pokemon-police {
   font-family: Pokemon;
   letter-spacing: 0.2em;
 }
-body{
-  background-color: #fcfcfc;
-  background: radial-gradient(circle, transparent 20%, #fcfcfc 20%, #fcfcfc 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #fcfcfc 20%, #fcfcfc 80%, transparent 80%, transparent) 97.5px 97.5px, linear-gradient(#abacb9 7.800000000000001px, transparent 7.800000000000001px) 0 -3.9000000000000004px, linear-gradient(90deg, #abacb9 7.800000000000001px, #fcfcfc 7.800000000000001px) -3.9000000000000004px 0;
+
+body {
+  background-color: #eaeaea;
+  background: radial-gradient(circle, transparent 20%, #eaeaea 20%, #eaeaea 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #eaeaea 20%, #eaeaea 80%, transparent 80%, transparent) 97.5px 97.5px, linear-gradient(#c7c7c7 7.800000000000001px, transparent 7.800000000000001px) 0 -3.9000000000000004px, linear-gradient(90deg, #c7c7c7 7.800000000000001px, #eaeaea 7.800000000000001px) -3.9000000000000004px 0;
   background-size: 195px 195px, 195px 195px, 97.5px 97.5px, 97.5px 97.5px;
 }
