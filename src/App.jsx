@@ -4,12 +4,14 @@ import PokedexList from './Components/PokedexList';
 import Comparator from './Components/Comparator';
 import RandomTeam from './Components/RandomTeam';
 import StaffList from './Components/StaffList';
+import ScrollButton from './Container/ScrollButton';
 import './App.css';
 
 function App() {
   return (
     <div>
       <Router>
+        <section id="top" />
         <Navbar />
         <div className="main">
           <Switch>
@@ -31,6 +33,7 @@ function App() {
           </Switch>
         </div>
       </Router>
+      <ScrollButton />
     </div>
   );
 }
