@@ -12,6 +12,7 @@ function App() {
     <div>
       <Router>
         <section id="top" />
+        <ScrollButton />
         <Navbar />
         <div className="main">
           <Switch>
@@ -33,7 +34,6 @@ function App() {
           </Switch>
         </div>
       </Router>
-      <ScrollButton />
     </div>
   );
 }
