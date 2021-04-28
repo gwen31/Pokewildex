@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import LoadingElement from './LoadingElement';
 import LoadingScreen from './LoadingScreen';
 import './PokedexDetails.css';
@@ -10,20 +11,24 @@ function PokedexDetails({ pokemonId }) {
     id, sprites, types, abilities, species,
   } = pokemonInfos;
 
-  const typesForCard = [];
-  const colorsForCard = [];
-  if (types) {
-    typesForCard.push(types[0].type.name);
-    colorsForCard.push(colorTypes[typesForCard[0]]);
-    if (types.length > 1) {
-      typesForCard.push(types[1].type.name);
-      colorsForCard.push(colorTypes[typesForCard[1]]);
+  const [colorsForCard, setColorsForCard] = useState([]);
+
+  useEffect(() => {
+    if (types) {
+      setColorsForCard([colorTypes[types[0].type.name]]);
+      if (types.length > 1) {
+        setColorsForCard([
+          colorTypes[types[0].type.name],
+          colorTypes[types[1].type.name],
+        ]);
+      }
     }
-  }
+  }, [id]);
+
   return (
     <>
       <div className="pokedex-card">
-        {types ? (
+        {colorsForCard.length >= 1 ? (
           <div
             className="pokedex-card-additional"
             style={
