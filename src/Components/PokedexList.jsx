@@ -82,26 +82,6 @@ function PokedexList() {
       ) : (
         <LoadingScreen />
       )}
-      <section className="pokedex-explorer">
-        {prevPage && (
-          <button
-            className="pokedex-button"
-            type="submit"
-            onClick={() => handlePage(prevPage)}
-          >
-            ←
-          </button>
-        )}
-        {nextPage && (
-          <button
-            className="pokedex-button"
-            type="submit"
-            onClick={() => handlePage(nextPage)}
-          >
-            →
-          </button>
-        )}
-      </section>
     </>
   );
 }
