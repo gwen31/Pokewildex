@@ -1,27 +1,21 @@
 :root {
   --bg-color: #1e1e1e;
-  --card-bg-color: white;
+  --card-bg-color: rgba(255, 255, 255, 0.924);
   --card-shadow-color: rgba(0, 0, 0, 0.7);
   --primary-color: #acacac;
-}
-
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
-
-body {
-  font-family: sans-serif;
-  background-color: var(--bg-color);
 }
 
 .flex {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
+.wrap {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
 /*--------------------------------------------------------------
 # Card
 --------------------------------------------------------------*/
@@ -30,6 +24,9 @@ body {
   width: 326px;
   border-radius: 16px;
   box-shadow: 2px 2px 4px var(--card-shadow-color);
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  margin-left: 0.8em;
 }
 
 .card-body {
@@ -40,32 +37,32 @@ body {
 }
 
 .card-body-img {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   margin: 10px;
+  object-fit: cover;
+  margin-left: 34px;
+  border-radius: 10px;
 }
 
 .card-body-title {
-  margin-top: 2rem;
-  font-size: 1.8rem;
+  margin-top: 1.5rem;
+  font-size: 1.5em;
   text-transform: capitalize;
-}
-
-.card-body-title span {
-  color: var(--primary-color);
-  font-weight: 400;
+  color: #1e1e1e;
 }
 
 .card-body-text {
-  color: var(--primary-color);
-  font-size: 1.6rem;
+  color: rgba(0, 0, 0, 0.76);
+  font-size: 1em;
   margin-top: 0;
-  margin-bottom: 2rem;
+  font-weight: bold;
 }
 
 .card-footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .card-footer-social {
@@ -74,6 +71,10 @@ body {
   margin-bottom: 2rem;
 }
 
-.card-footer-social p {
-  letter-spacing: 1px;
+.card-footer-social p,
+h3 {
+  font-size: 1em;
+  padding: 5px;
+  color: #181818d0;
+  font-weight: bold;
 }
