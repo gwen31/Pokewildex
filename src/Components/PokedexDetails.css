@@ -109,9 +109,10 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+    padding-top: 70px;
     padding-left: 3%;
     padding-right: -11%;
-    margin-top: 130px;
+    /*margin-top*/
   }
   .pokedex-button {
     display: inline-block;
@@ -128,6 +129,7 @@
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
+    margin-top: 5px;
   }
   .pokedex-button:hover {
     background-color: #ffa385;
