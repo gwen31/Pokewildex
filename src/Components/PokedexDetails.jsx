@@ -1,15 +1,22 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 import LoadingElement from './LoadingElement';
 import LoadingScreen from './LoadingScreen';
 import './PokedexDetails.css';
-import PokemonFetchApi from './PokemonFetchApi';
+import API_POKEMON_DEFAULT from '../constants/api';
 import colorTypes from '../constants/colorTypes';
 
 function PokedexDetails({ pokemonId }) {
-  const pokemonInfos = PokemonFetchApi(pokemonId);
+  const [pokemon, setPokemon] = useState({});
+  useEffect(() => {
+    axios
+      .get(`${API_POKEMON_DEFAULT}${pokemonId}`)
+      .then((res) => res.data)
+      .then(setPokemon);
+  }, [pokemonId]);
   const {
     id, sprites, types, abilities, species,
-  } = pokemonInfos;
+  } = pokemon;
 
   const [colorsForCard, setColorsForCard] = useState([]);
 
