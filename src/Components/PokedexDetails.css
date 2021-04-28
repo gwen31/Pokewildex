@@ -8,7 +8,7 @@
   .pokedex-button {
     display: inline-block;
     margin-left: 2px;
-    margin-right: 2px;
+    margin-right:2px;
     width: 110px;
     font-size: 2em;
     font-weight: bold;
@@ -89,6 +89,7 @@
   .pokedex-card-right {
     position: static;
     margin-left: 250px;
+    background:linear-gradient(to right, rgba(255, 255, 255, 0.01),rgba(255, 255, 255, 0.6));
   }
   .pokedex-card .additional .more-info {
     width: 300px;
@@ -101,13 +102,14 @@
   .pokedex-card-textblock {
     padding-top: 5px;
   }
+
 }
 @media screen and (max-width: 700px) {
   .pokedex-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding-left: 3%;
+    padding-left:3%;
   }
   .pokedex-button {
     display: inline-block;
@@ -149,6 +151,7 @@
     border-radius: 15px;
     position: relative;
     margin: 1.5rem;
+    
   }
   /*IMAGE*/
   .pokedex-card-image {
