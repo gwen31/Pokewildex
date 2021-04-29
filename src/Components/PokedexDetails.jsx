@@ -8,29 +8,21 @@ import colorTypes from '../constants/colorTypes';
 
 function PokedexDetails({ pokemonId }) {
   const [pokemon, setPokemon] = useState({});
+  const [colorsForCard, setColorsForCard] = useState([]);
+  const {
+    id, sprites, types, abilities, species,
+  } = pokemon;
+
   useEffect(() => {
     axios
       .get(`${API_POKEMON_DEFAULT}${pokemonId}`)
       .then((res) => res.data)
       .then(setPokemon);
-  }, [pokemonId]);
-  const {
-    id, sprites, types, abilities, species,
-  } = pokemon;
-
-  const [colorsForCard, setColorsForCard] = useState([]);
-
-  useEffect(() => {
     if (types) {
-      setColorsForCard([colorTypes[types[0].type.name]]);
-      if (types.length > 1) {
-        setColorsForCard([
-          colorTypes[types[0].type.name],
-          colorTypes[types[1].type.name],
-        ]);
-      }
+      const newColorTypes = types.map((t) => colorTypes[t.type.name]);
+      setColorsForCard(newColorTypes);
     }
-  }, [id]);
+  }, [id, pokemonId]);
 
   return (
     <>
