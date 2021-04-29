@@ -3,6 +3,7 @@ import axios from 'axios';
 import PokedexDetails from './PokedexDetails';
 import API_POKEMON_DEFAULT from '../constants/api';
 import LoadingScreen from './LoadingScreen';
+import Header from '../Container/Header';
 
 function PokedexList() {
   const [pokemons, setPokemons] = useState([]);
@@ -39,6 +40,9 @@ function PokedexList() {
 
   return (
     <>
+      <div className="header">
+        <Header />
+      </div>
       <section className="pokedex-explorer">
         {prevPage && (
           <button
