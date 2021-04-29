@@ -9,7 +9,7 @@
     display: inline-block;
     margin: 20px;
     width: 110px;
-    font-size: 2em;
+    font-size: 1.3em;
     font-weight: bold;
     cursor: pointer;
     text-align: center;
@@ -20,6 +20,7 @@
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
+    height: 50px;
   }
   .pokedex-button:hover {
     background-color: #ffa385;
@@ -101,20 +102,19 @@
   .pokedex-card-textblock {
     padding-top: 5px;
   }
-
 }
 @media screen and (max-width: 700px) {
   .pokedex-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding-left:3%;
+    padding-left: 3%;
   }
   .pokedex-button {
     display: inline-block;
     margin: 20px;
     width: 110px;
-    font-size: 2em;
+    font-size: 1.3em;
     font-weight: bold;
     cursor: pointer;
     text-align: center;

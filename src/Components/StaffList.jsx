@@ -33,7 +33,8 @@ const staffs = [
   {
     name: 'Thomas',
     data: {
-      imgUrl: '',
+      imgUrl:
+        'https://media.discordapp.net/attachments/826040314674020363/837237093255610368/rsz_1pokethomas.jpg?width=422&height=451',
       color: '#606060',
     },
     age: '29 ans',
