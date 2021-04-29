@@ -9,6 +9,9 @@ function refreshPage() {
 function RandomTeam() {
   return (
     <>
+      <div className="header">
+        <Header />
+      </div>
       <div className="pokedex-cards">
         <PokedexDetails pokemonId={getRandomPokemonId()} />
         <PokedexDetails pokemonId={getRandomPokemonId()} />

@@ -1,4 +1,5 @@
 import Staff from './Staff';
+import Header from '../Container/Header';
 
 const staffs = [
   {
@@ -45,6 +46,9 @@ const staffs = [
 function StaffList() {
   return (
     <div className="wrap">
+      <div className="header">
+        <Header />
+      </div>
       {staffs.map((staff) => (
         <Staff
           key={staff.id}
