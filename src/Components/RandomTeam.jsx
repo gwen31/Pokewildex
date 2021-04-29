@@ -1,5 +1,6 @@
 import PokedexDetails from './PokedexDetails';
 import getRandomPokemonId from '../utils/pokemons';
+import Header from '../Container/Header';
 
 function refreshPage() {
   window.location.reload(false);
