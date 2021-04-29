@@ -4,13 +4,14 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-top: 40px;
+
   }
 
   .pokedex-button {
     display: inline-block;
     margin: 20px;
     width: 110px;
-    font-size: 2em;
+    font-size: 1.3em;
     font-weight: bold;
     cursor: pointer;
     text-align: center;
@@ -21,6 +22,7 @@
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
+    height: 50px;
   }
   .pokedex-button:hover {
     background-color: #ffa385;
@@ -117,7 +119,7 @@
     display: inline-block;
     margin: 20px;
     width: 110px;
-    font-size: 2em;
+    font-size: 1.3em;
     font-weight: bold;
     cursor: pointer;
     text-align: center;
@@ -188,5 +190,9 @@
   text-align: center;
   margin-left: 2em;
   padding-top: 1em;
+}
+
+.explorer {
   height: 2em;
 }
+
