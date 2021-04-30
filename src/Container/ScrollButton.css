@@ -1,8 +1,42 @@
+@media (min-width: 700px) {
+  .go-up-btn {
+    left: 90%;
+  }
+}
+@media (min-width: 850px) {
+  .go-up-btn {
+    left: 88%;
+  }
+}
+@media (min-width: 1000px) {
+  .go-up-btn {
+    left: 90%;
+  }
+}
+@media (min-width: 1200px) {
+  .go-up-btn {
+    left: 92%;
+  }
+}
+@media (min-width: 1400px) {
+  .go-up-btn {
+    left: 94%;
+  }
+}
+@media (min-width: 1400px) {
+  .go-up-btn {
+    left: 95%;
+  }
+}
+@media (max-width: 699px) {
+  .go-up-btn {
+    left: 84%;
+  }
+}
 .go-up-btn {
   display: none;
   top: 85%;
   opacity: 100%;
-  left: 84%;
   position: fixed;
   z-index: 1000;
 }
