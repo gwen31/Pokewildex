@@ -12,6 +12,17 @@ function RandomTeam() {
       <div className="header">
         <Header />
       </div>
+      <button
+        type="button"
+        onClick={refreshPage}
+        className="pokedex-button"
+        style={{
+          width: 200,
+          margin: 45,
+        }}
+      >
+        New team
+      </button>
       <div className="pokedex-cards">
         <PokedexDetails pokemonId={getRandomPokemonId()} />
         <PokedexDetails pokemonId={getRandomPokemonId()} />
@@ -19,11 +30,6 @@ function RandomTeam() {
         <PokedexDetails pokemonId={getRandomPokemonId()} />
         <PokedexDetails pokemonId={getRandomPokemonId()} />
         <PokedexDetails pokemonId={getRandomPokemonId()} />
-      </div>
-      <div className="pokedex-explorer">
-        <button type="button" onClick={refreshPage} className="pokedex-button">
-          New team
-        </button>
       </div>
     </>
   );
