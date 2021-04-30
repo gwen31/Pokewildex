@@ -1,11 +1,5 @@
-import Header from '../Container/Header';
-
 function Comparator() {
-  return (
-    <div className="header">
-      <Header />
-    </div>
-  );
+  return null;
 }
 
 export default Comparator;
