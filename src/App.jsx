@@ -5,11 +5,15 @@ import Comparator from './Components/Comparator';
 import RandomTeam from './Components/RandomTeam';
 import StaffList from './Components/StaffList';
 import ScrollButton from './Container/ScrollButton';
+import Header from './Container/Header';
 import './App.css';
 
 function App() {
   return (
     <div>
+      <div className="header">
+        <Header />
+      </div>
       <Router>
         <section id="top" />
         <ScrollButton />
