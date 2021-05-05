@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import PokedexDetails from './PokedexDetails';
 import API_POKEMON_DEFAULT from '../constants/api';
 import LoadingScreen from './LoadingScreen';
+import fetchSearchPokemon from '../utils/fetchSearchPokemon';
+import fetchPages from '../utils/fetchPages';
 
 function PokedexList() {
   const [pokemons, setPokemons] = useState([]);
@@ -11,27 +12,10 @@ function PokedexList() {
   const [prevPage, setPrevPage] = useState([]);
   const [searchedName, setSearchedName] = useState('');
 
-  const handleSubmit = () => {
-    axios
-      .get(`${API_POKEMON_DEFAULT}${searchedName}`)
-      .then((result) => setPokemons([result.data]));
-  };
-
-  const fetchPages = () => {
-    axios
-      .get(currPage)
-      .then((res) => res.data)
-      .then((res) => {
-        setNextPage(res.next);
-        setPrevPage(res.previous);
-        setPokemons(res.results);
-      });
-  };
-
   useEffect(() => {
-    fetchPages();
+    fetchPages(currPage, setNextPage, setPrevPage, setPokemons);
     if (searchedName) {
-      handleSubmit();
+      fetchSearchPokemon(searchedName, setPokemons);
     }
   }, [currPage, searchedName]);
 
