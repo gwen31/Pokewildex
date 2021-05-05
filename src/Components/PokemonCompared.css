@@ -1,0 +1,31 @@
+/* SEARCH-BAR*/
+.search-bar {
+  margin-left: 10%;
+}
+input {
+  font-size: 20px;
+  border-radius: 8px;
+  padding: 5px;
+}
+/*CARD*/
+.comparator-card {
+  margin-left: 15%;
+  margin-bottom: 15px;
+  margin-top: 40px;
+  width: 326px;
+  border: 1px solid black;
+  border-radius: 16px;
+  box-shadow: 2px 2px 4px var(--card-shadow-color);
+  background-color: white;
+  padding: 20px;
+}
+/*IMAGE + NAME*/
+.pokemon-image {
+  height: 300px;
+  width: 350px;
+}
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
