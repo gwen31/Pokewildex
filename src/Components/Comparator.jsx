@@ -1,63 +1,28 @@
-import axios from 'axios';
-import { useState } from 'react';
-import PokedexDetails from './PokedexDetails';
-import API_POKEMON_DEFAULT from '../constants/api';
+import { useState, useEffect } from 'react';
+import fetchPokemonComparator from '../utils/fetchPokemonComparator';
+import PokemonCompared from './PokemonCompared';
 
 function Comparator() {
-  const [searchedName1, setSearchedName1] = useState('');
-  const [searchedName2, setSearchedName2] = useState('');
-  const handleSearch = (pokemon, setPokemon) => {
-    const nameToLower = pokemon.toLowerCase();
-    setPokemon(nameToLower);
-  };
-  const fetchPokemon = (pokemonName, setPokemonName) => {
-    axios
-      .get(`${API_POKEMON_DEFAULT}${pokemonName}`)
-      .then((result) => setPokemonName([result.data]))
-      .catch((err) => {
-        if (err.response.data === 'Not Found') {
-          alert("This pokemon doesn't exist ! ");
-        }
-      });
-  };
-  const handleSubmit = (pokemon, setPokemon) => fetchPokemon(pokemon, setPokemon);
+  const [pokemon1, setPokemon1] = useState({});
+  const [pokemonSearched1, setPokemonSearched1] = useState('');
+  const [pokemon2, setPokemon2] = useState({});
+  const [pokemonSearched2, setPokemonSearched2] = useState('');
+
+  useEffect(() => {
+    fetchPokemonComparator(pokemonSearched1, setPokemon1);
+    fetchPokemonComparator(pokemonSearched2, setPokemon2);
+  }, [pokemonSearched1, pokemonSearched2]);
 
   return (
-    <div className="header">
-      <input
-        className="explorer"
-        placeholder="searchbar"
-        onChange={(e) => handleSearch(e.target.value, setSearchedName1)}
+    <div>
+      <PokemonCompared
+        pokemon={pokemon1}
+        setPokemonSearched={setPokemonSearched1}
       />
-      {searchedName1 && (
-        <button
-          className="explorer"
-          type="submit"
-          onClick={() => handleSubmit(searchedName1, setSearchedName1)}
-        >
-          GO
-        </button>
-      )}{' '}
-      <input
-        className="explorer"
-        placeholder="searchbar"
-        onChange={(e) => handleSearch(e.target.value, setSearchedName2)}
+      <PokemonCompared
+        pokemon={pokemon2}
+        setPokemonSearched={setPokemonSearched2}
       />
-      {searchedName2 && (
-        <button
-          className="explorer"
-          type="submit"
-          onClick={() => handleSubmit(searchedName2, setSearchedName2)}
-        >
-          GO
-        </button>
-      )}
-      {searchedName1 && (
-        <PokedexDetails key={searchedName1} pokemonId={searchedName1} />
-      )}
-      {searchedName2 && (
-        <PokedexDetails key={searchedName2} pokemonId={searchedName2} />
-      )}
     </div>
   );
 }
