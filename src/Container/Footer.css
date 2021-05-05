@@ -1,0 +1,27 @@
+@media screen and (max-width: 700px) {
+  .footer {
+    display: none;
+  }
+}
+@media screen and (min-width: 700px) {
+  .footer {
+    display: block;
+    background: #fc6852;
+    height: 75px;
+    bottom: 0;
+    width: 245px;
+    padding-top: 2rem;
+    position: fixed;
+    text-align: right;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  .footer-text {
+    padding-top: 10px;
+  }
+  .footer-separation {
+    border-bottom: solid 1px black;
+    width: 250px;
+    align-content: right;
+  }
+}

@@ -6,6 +6,7 @@ import imgVersus from './images/icons/versus.png';
 import imgCap from './images/icons/cap.png';
 import imgBalance from './images/icons/balance.png';
 import imgLogo from './images/logo.png';
+import Footer from './Footer';
 
 function Navbar() {
   return (
@@ -45,6 +46,7 @@ function Navbar() {
           </li>
         </ul>
       </div>
+      <Footer />
     </div>
   );
 }
