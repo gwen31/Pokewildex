@@ -10,7 +10,14 @@ function PokedexList() {
   const [nextPage, setNextPage] = useState([]);
   const [prevPage, setPrevPage] = useState([]);
   const [searchedName, setSearchedName] = useState('');
-  useEffect(() => {
+
+  const handleSubmit = () => {
+    axios
+      .get(`${API_POKEMON_DEFAULT}${searchedName}`)
+      .then((result) => setPokemons([result.data]));
+  };
+
+  const fetchPages = () => {
     axios
       .get(currPage)
       .then((res) => res.data)
@@ -19,24 +26,16 @@ function PokedexList() {
         setPrevPage(res.previous);
         setPokemons(res.results);
       });
-  }, [currPage]);
+  };
 
-  const handleSearch = (pkmnName) => {
-    const nameToLower = pkmnName.toLowerCase();
-    setSearchedName(nameToLower);
-  };
-  const handleSubmit = () => {
-    axios
-      .get(`${API_POKEMON_DEFAULT}${searchedName}`)
-      .then((result) => setPokemons([result.data]))
-      .catch((err) => {
-        if (err.response.data === 'Not Found') {
-          alert("This pokemon doesn't exist ! ");
-        }
-      });
-  };
+  useEffect(() => {
+    fetchPages();
+    if (searchedName) {
+      handleSubmit();
+    }
+  }, [currPage, searchedName]);
+
   const handlePage = (page) => setCurrPage(page);
-
   return (
     <>
       <section className="pokedex-explorer">
@@ -52,17 +51,8 @@ function PokedexList() {
         <input
           className="explorer"
           placeholder="searchbar"
-          onChange={(e) => handleSearch(e.target.value)}
+          onChange={(e) => setSearchedName(e.target.value)}
         />
-        {searchedName && (
-          <button
-            className="explorer"
-            type="submit"
-            onClick={() => handleSubmit()}
-          >
-            GO
-          </button>
-        )}
         {nextPage && (
           <button
             className="pokedex-button"
