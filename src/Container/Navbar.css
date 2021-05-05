@@ -52,7 +52,7 @@ div {
   .logo {
     display: none;
   }
-  ul {
+  .navbar-ul {
     padding-top: 45%;
     margin-top: -40%;
   }

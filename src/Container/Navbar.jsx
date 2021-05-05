@@ -13,7 +13,7 @@ function Navbar() {
     <div className="navbar">
       <div className="sidebar">
         <img className="logo" src={imgLogo} alt="" />
-        <ul className="ul-navbar">
+        <ul className="navbar-ul">
           <li>
             <Link to="/PokedexList">
               <img className="sidebar-icon" src={imgPokedex} alt="" />
