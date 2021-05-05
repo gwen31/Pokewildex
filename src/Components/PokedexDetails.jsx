@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import LoadingElement from './LoadingElement';
 import LoadingScreen from './LoadingScreen';
 import './PokedexDetails.css';
-import API_POKEMON_DEFAULT from '../constants/api';
-import colorTypes from '../constants/colorTypes';
+import fetchPokemonComparator from '../utils/fetchPokemonComparator';
+import setColorTypes from '../utils/setColorTypes';
 
 function PokedexDetails({ pokemonId }) {
   const [pokemon, setPokemon] = useState({});
@@ -14,14 +13,8 @@ function PokedexDetails({ pokemonId }) {
   } = pokemon;
 
   useEffect(() => {
-    axios
-      .get(`${API_POKEMON_DEFAULT}${pokemonId}`)
-      .then((res) => res.data)
-      .then(setPokemon);
-    if (types) {
-      const newColorTypes = types.map((t) => colorTypes[t.type.name]);
-      setColorsForCard(newColorTypes);
-    }
+    fetchPokemonComparator(pokemonId, setPokemon);
+    setColorTypes(pokemon, setColorsForCard);
   }, [id, pokemonId]);
 
   return (

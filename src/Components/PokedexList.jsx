@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import PokedexDetails from './PokedexDetails';
 import API_POKEMON_DEFAULT from '../constants/api';
 import LoadingScreen from './LoadingScreen';
+import fetchSearchPokemon from '../utils/fetchSearchPokemon';
+import fetchPages from '../utils/fetchPages';
 
 function PokedexList() {
   const [pokemons, setPokemons] = useState([]);
@@ -10,33 +11,15 @@ function PokedexList() {
   const [nextPage, setNextPage] = useState([]);
   const [prevPage, setPrevPage] = useState([]);
   const [searchedName, setSearchedName] = useState('');
+
   useEffect(() => {
-    axios
-      .get(currPage)
-      .then((res) => res.data)
-      .then((res) => {
-        setNextPage(res.next);
-        setPrevPage(res.previous);
-        setPokemons(res.results);
-      });
-  }, [currPage]);
+    fetchPages(currPage, setNextPage, setPrevPage, setPokemons);
+    if (searchedName) {
+      fetchSearchPokemon(searchedName, setPokemons);
+    }
+  }, [currPage, searchedName]);
 
-  const handleSearch = (pkmnName) => {
-    const nameToLower = pkmnName.toLowerCase();
-    setSearchedName(nameToLower);
-  };
-  const handleSubmit = () => {
-    axios
-      .get(`${API_POKEMON_DEFAULT}${searchedName}`)
-      .then((result) => setPokemons([result.data]))
-      .catch((err) => {
-        if (err.response.data === 'Not Found') {
-          alert("This pokemon doesn't exist ! ");
-        }
-      });
-  };
   const handlePage = (page) => setCurrPage(page);
-
   return (
     <>
       <section className="pokedex-explorer">
@@ -52,17 +35,8 @@ function PokedexList() {
         <input
           className="explorer"
           placeholder="searchbar"
-          onChange={(e) => handleSearch(e.target.value)}
+          onChange={(e) => setSearchedName(e.target.value)}
         />
-        {searchedName && (
-          <button
-            className="explorer"
-            type="submit"
-            onClick={() => handleSubmit()}
-          >
-            GO
-          </button>
-        )}
         {nextPage && (
           <button
             className="pokedex-button"
