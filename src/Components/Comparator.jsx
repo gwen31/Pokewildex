@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import fetchPokemonComparator from '../utils/fetchPokemonComparator';
 import PokemonCompared from './PokemonCompared';
+import './PokemonCompared.css';
 
 function Comparator() {
   const [pokemon1, setPokemon1] = useState({});
@@ -14,7 +15,7 @@ function Comparator() {
   }, [pokemonSearched1, pokemonSearched2]);
 
   return (
-    <div>
+    <div className="comparator-container">
       <PokemonCompared
         pokemon={pokemon1}
         setPokemonSearched={setPokemonSearched1}
