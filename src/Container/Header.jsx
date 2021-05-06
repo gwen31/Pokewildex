@@ -3,9 +3,9 @@ import imgLogo from './images/logo.png';
 
 function Header() {
   return (
-    <div>
+    <header>
       <img className="logo-header" src={imgLogo} alt="" />
-    </div>
+    </header>
   );
 }
 

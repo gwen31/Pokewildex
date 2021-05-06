@@ -16,14 +16,22 @@ function Comparator() {
 
   return (
     <div className="comparator-container">
-      <PokemonCompared
-        pokemon={pokemon1}
-        setPokemonSearched={setPokemonSearched1}
-      />
-      <PokemonCompared
-        pokemon={pokemon2}
-        setPokemonSearched={setPokemonSearched2}
-      />
+      <p className="comparator-paragraph">
+        In this comparator section, you can choose two pokemon and check by
+        yourself which one is the best.
+        <br />
+        Keep in mind the type&apos;s weaknesses !
+      </p>
+      <div className="compared-cards">
+        <PokemonCompared
+          pokemon={pokemon1}
+          setPokemonSearched={setPokemonSearched1}
+        />
+        <PokemonCompared
+          pokemon={pokemon2}
+          setPokemonSearched={setPokemonSearched2}
+        />
+      </div>
     </div>
   );
 }
