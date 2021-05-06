@@ -6,13 +6,14 @@ import imgVersus from './images/icons/versus.png';
 import imgCap from './images/icons/cap.png';
 import imgBalance from './images/icons/balance.png';
 import imgLogo from './images/logo.png';
+import Footer from './Footer';
 
 function Navbar() {
   return (
     <div className="navbar">
       <div className="sidebar">
         <img className="logo" src={imgLogo} alt="" />
-        <ul className="ul-navbar">
+        <ul className="navbar-ul">
           <li>
             <Link to="/PokedexList">
               <img className="sidebar-icon" src={imgPokedex} alt="" />
@@ -45,6 +46,7 @@ function Navbar() {
           </li>
         </ul>
       </div>
+      <Footer />
     </div>
   );
 }
