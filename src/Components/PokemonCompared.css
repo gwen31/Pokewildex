@@ -3,6 +3,7 @@
     font-size: 20px;
     border-radius: 8px;
     padding: 5px;
+    margin-top: 1em;
   }
   /*CARD*/
   .comparator-card {
@@ -93,9 +94,9 @@
     margin-bottom: 1em;
   }
   .search-bar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
