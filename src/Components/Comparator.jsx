@@ -32,7 +32,7 @@ function Comparator() {
           setPokemonSearched={setPokemonSearched2}
         />
       </div>
-    </div>
+
   );
 }
 export default Comparator;
