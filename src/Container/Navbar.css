@@ -1,11 +1,9 @@
-div {
-  height: 100%;
-}
 .logo {
   max-width: 250px;
 }
 .navbar {
   position: fixed;
+  height: 100%;
 }
 .sidebar-icon {
   margin-top: 14px;
@@ -22,6 +20,7 @@ div {
   text-align: center;
   background: #fc6852;
   user-select: none;
+  height: 100%;
 }
 .sidebar ul li a {
   display: flex;
