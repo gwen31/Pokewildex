@@ -16,6 +16,12 @@ function Comparator() {
 
   return (
     <div className="comparator-container">
+      <p className="comparator-paragraph">
+        In this comparator section, you can choose two pokemon and check by
+        yourself which one is the best.
+        <br />
+        Keep in mind the type&apos;s weaknesses !
+      </p>
       <PokemonCompared
         pokemon={pokemon1}
         setPokemonSearched={setPokemonSearched1}
