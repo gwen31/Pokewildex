@@ -1,8 +1,6 @@
 .comparator-paragraph {
   background-color: rgba(250, 249, 245, 0.863);
   max-width: 80%;
-  display: flex;
-  justify-content: center;
   text-align: center;
   font-size: 1.5em;
   box-shadow: 2px 2px 2px 0.5px;
@@ -10,13 +8,24 @@
   padding: 0.6em;
   margin: 1em;
 }
+@media screen and (min-width: 1500px) {
+  .comparator-container {
+    display: flex;
+    flex-direction: column;
+  }
 
-@media screen and (min-width: 700px) {
+  .compared-cards {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: -150px;
+  }
+}
+@media screen and (min-width: 700px), (max-width: 1500px) {
   input {
     font-size: 20px;
     border-radius: 8px;
     padding: 5px;
-    margin-top: 1em;
+    width: 360px;
   }
   /*CARD*/
   .comparator-card {
@@ -43,6 +52,7 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    align-items: center;
   }
 
   .comparator-text {
@@ -58,9 +68,14 @@
     margin-bottom: 1em;
   }
 
-  .search-bar {
+  .compared-cards {
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .search-bar {
+    margin-left: 3em;
   }
 }
 
@@ -116,5 +131,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 1em;
+  }
+
+  .compared-cards {
+    display: flex;
+    flex-direction: column;
   }
 }

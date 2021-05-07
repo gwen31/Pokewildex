@@ -22,15 +22,17 @@ function Comparator() {
         <br />
         Keep in mind the type&apos;s weaknesses !
       </p>
-      <PokemonCompared
-        pokemon={pokemon1}
-        setPokemonSearched={setPokemonSearched1}
-      />
-      <PokemonCompared
-        pokemon={pokemon2}
-        setPokemonSearched={setPokemonSearched2}
-      />
-    </div>
+      <div className="compared-cards">
+        <PokemonCompared
+          pokemon={pokemon1}
+          setPokemonSearched={setPokemonSearched1}
+        />
+        <PokemonCompared
+          pokemon={pokemon2}
+          setPokemonSearched={setPokemonSearched2}
+        />
+      </div>
+
   );
 }
 export default Comparator;
