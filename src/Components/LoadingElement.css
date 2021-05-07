@@ -6,9 +6,11 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .load-pokeball-mini {
-    width: 50px;
-    animation: spin infinite 0.5s linear;
+  .load-pokeball {
+    width: 100px;
+    animation: spin infinite 1s linear;
+    display: flex;
+    flex-direction: row;
   }
 }
 

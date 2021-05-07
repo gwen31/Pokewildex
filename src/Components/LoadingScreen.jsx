@@ -5,7 +5,7 @@ function LoadingElement() {
   return (
     <div className="loading-screen">
       <img className="load-pokeball" src={imgPokeBall} alt="pokeball" />
-      <p>now Loading</p>
+      <p>Loading...</p>
     </div>
   );
 }

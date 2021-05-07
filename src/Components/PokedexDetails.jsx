@@ -76,11 +76,7 @@ function PokedexDetails({ pokemonId }) {
           <LoadingScreen />
         )}
         <div className="pokedex-card-center name">
-          {species ? (
-            <h2 className="pokemon-police">{species.name}</h2>
-          ) : (
-            <LoadingScreen />
-          )}
+          {species && <h2 className="pokemon-police">{species.name}</h2>}
         </div>
       </div>
     </>
