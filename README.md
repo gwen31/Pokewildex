@@ -1,8 +1,8 @@
 PoKéWildex is an application that uses the Pokémon API (PokéApi).
 
 It is a Pokédex with several features:
-    - a team generator, 
-    - a pokémon comparator
+     a team generator, 
+     a pokémon comparator
 
 React.js
 axios
