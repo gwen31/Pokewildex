@@ -8,8 +8,6 @@ React.js
 axios
 Css
 
-You will find screenshots below and the vercel link
-
 
 ![Capture d’écran du 2021-05-23 19-36-55](https://user-images.githubusercontent.com/74680440/119271102-58287380-bc00-11eb-8fd6-3aa77b9740e4.png)
 
