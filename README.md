@@ -1,3 +1,5 @@
+##PokéWildex
+
 PoKéWildex is an application that uses the Pokémon API (PokéApi).
 
 It is a Pokédex with several features:
